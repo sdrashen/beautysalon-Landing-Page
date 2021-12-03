@@ -1,9 +1,82 @@
+/*RESET*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
+
+/*Tira as imgs do tamanho original e as adapta ao 100%*/
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* VARIABLES */
+
+:root {
+    /*font-size: 100% - Since 16px is by default the font-size, appluing 100% to it means the same and 100% becomes a reference*/
+    /* colors */
+    --hue: 159;
+    /* HSL color mode */
+    --base-color: hsl(var(--hue) 36% 57%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color-alt: hsl(var(--hue) 57% 53%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --body-color: hsl(0 0% 98%);
+}
+
+
+/* BASE */
+
+body {
+    font: 400 1rem 'DM Sans', sans-serif;
+    color: var(--text-color);
+    background: var(--body-color);
+    /* webkit é um prefixo (vendor prefixer) que depende do navegador.
+    Seo navegador é um tipo webkit (o chrome é)  então ele aplica a propriedade (font-smoothing: antialiased;) que está habilitada nele. Ela ñ está habilitada em todos mas no chrome está. */
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font: 700 1.875rem 'Poppins', sans-serif;
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+.button {}
+
+
+/*rem = "root em" will always get a relative reference. In this case, it will always use as reference the font-size, that is 100%. So here we have 16 * 4.5 = 72px. 72px is the height of the header in the design on Figma*/
+
+
+/* LAYOUT */
+
 #header {
     height: 4.5rem;
+    /*72/16 = 4,5*/
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {}
+
+.container {
+    width: 100%;
+    margin: 0 1.5rem;
+}
+
+
+/* HOME */
