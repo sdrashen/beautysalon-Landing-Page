@@ -22,7 +22,7 @@ img {
 /* VARIABLES */
 
 :root {
-    /*font-size: 100% - Since 16px is by default the font-size, appluing 100% to it means the same and 100% becomes a reference*/
+    /*font-size: 100% - Since 16px is by default the font-size, applying 100% to it means the same and 100% becomes a reference*/
     /* colors */
     --hue: 159;
     /* HSL color mode */
@@ -62,21 +62,81 @@ h1 {
 /* LAYOUT */
 
 #header {
-    height: 4.5rem;
-    /*72/16 = 4,5*/
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 2rem;
 }
 
 nav {
+    height: 4.5rem;
+    /*72/16 = 4,5*/
+    /* O height vai ficar aqui porque a altura que o nav tiver será a mesma do header. A vantagem de deixar aqui é que aqui já tem o display flex.  */
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo {}
+.logo {
+    font: 700 1.31rem 'Poppins', sans-serif;
+    color: var(--title-color);
+}
+
+.logo span {
+    color: var(--base-color);
+}
 
 .container {
     width: 100%;
     margin: 0 1.5rem;
 }
 
+.grid {
+    display: grid;
+    /*Esse display aqui não mud nada mas habilita outras funcionalidades como o gap. */
+    gap: 2rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
 
 /* HOME */
+
+#home .container {
+    margin: 0;
+}
+
+#home .image {
+    position: relative;
+}
+
+
+/* Esse psudo element cria um elemento fantasma antes da class image */
+
+#home .image::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: red;
+    position: absolute;
+    /*Aqui tem que descolar 68px pra cima mas tem que ser transformado em porcentagem. É a alutra menos o deslocamento. Nesse caso, usa-se a regra de 3: 68 * 100 / 405 (dados tirados do layout no figma) */
+    top: -16.8%;
+    /* z-index é uma propriedade que está disponível por causa do uso do position (seja qual for). O eixo Z é de profundidade. Aplicando z-index: 1 aqui, quer dizer que a image tem z-index: 0 e ela fica atrás*/
+    /*Esse cálculo é a largura menos o deslocamento para a direita*/
+    left: 16.7%;
+    z-index: 0;
+    /*O top: 1-6.8% e o z-index: 0; leva o background para trás e um pouco para cima*/
+}
+
+
+/* "Dentro da home procura a class image e dentro dela a tag img" */
+
+#home .image img {
+    /* Esse position: relative; habilita novas funcionalidades pra usar aqui */
+    position: relative;
+    right: 2.93rem;
+}
+
+#home .text {
+    margin: 0 1.5rem;
+}
