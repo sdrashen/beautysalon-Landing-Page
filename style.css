@@ -48,7 +48,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.title {
     font: 700 1.875rem 'Poppins', sans-serif;
     color: var(--title-color);
     -webkit-font-smoothing: auto;
@@ -151,6 +151,42 @@ nav {
     align-items: center;
     /*O pai desse elemento nav que é o header tem width 100% e o filho, nav, por causa do display felx não estava pegando esses 100% (e também talvez porque o pai está com os posicionamentos mexidos e tal, assim aqueles 3 pontinhos (que mais tarde viram o menu estilo hamburguer, ficaram grudados na palavra beautysalon. Para consertar isso tem que add width 100% ao nav também. */
     width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav .menu {
+    /*Essa estilização é necessária para o menu que queremos fazer*/
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/*Mostrar menu*/
+
+nav.show .menu {
+    /*Quando o nav tiver essa classe show, procure o menu lá dentro. Atentar para o nav estar colocado com o .show */
+    opacity: 1;
+    visibility: visible;
+    background: var(--body-color);
+    height: 100vh;
+    /*Viewport é toda a altura do layout. Aqui diz "fragmenta ele em 100 pedacinhos e pega todos eles. Se aqui fosse 10vh ele pegaria apenas 10 pedacinhos de 100 do vh.*/
+    width: 100vw;
+    /*Esse width sozinho ñ faz com que ele pegue toda a largura do layout. Pra isso é necessário um position.*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*Aqui diz: na page toda, fica com o top 0 e com o left 0. Daí sim ele cobre a page toda como queremos.*/
+}
+
+
+/*Só vai ser grid quando tiver a class show, porque esse é apenas para o mobile*/
+
+nav.show ul.grid {
+    /*Por questão de especificidade é necessário colocar nav ul.grid para ter o efeito desejado com a propriedade*/
+    gap: 4rem;
 }
 
 
