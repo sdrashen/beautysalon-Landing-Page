@@ -44,7 +44,7 @@ body {
     color: var(--text-color);
     background: var(--body-color);
     /* webkit é um prefixo (vendor prefixer) que depende do navegador.
-    Seo navegador é um tipo webkit (o chrome é)  então ele aplica a propriedade (font-smoothing: antialiased;) que está habilitada nele. Ela ñ está habilitada em todos mas no chrome está. */
+    Se o navegador é um tipo webkit (o chrome é)  então ele aplica a propriedade (font-smoothing: antialiased;) que está habilitada nele. Ela ñ está habilitada em todos mas no chrome está. */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -106,8 +106,6 @@ h1 {
     border-bottom: 1px solid #e4e4e4;
     margin-bottom: 2rem;
     display: flex;
-    /*Esse width 100% e o do #home .text p é para conter a rolagem horizontal. Mesmo assim não estava funcioanndo, então foi retirado o max-width 100% do #home .text p e o 100% do container, aí sim a rolagem horizontal parou*/
-    width: 100%;
     /*Esse position é pra fazer o header ficar parado. E ele também habilita o z-index*/
     position: fixed;
     /*top e left 0 aqui para garantir*/
@@ -117,18 +115,20 @@ h1 {
     /*100 para fazer o header ficar bem acima de tudo*/
     background-color: var(--body-color);
     /*Perceba que os itens foram lá pra cima porque o postion fixed top e left 0 cria uma nova camada e os elementos que estavam respeitando a altura por causa do nav agora não respeitam mais porque eles sobem. Todos eles estavam respeitando a linha mas quando um sai de contexto e vai pra cima todos os outros os seguem tomando o seu posicionamento*/
-}
-
-nav {
-    height: var(--header-height);
-    /*72/16 = 4,5*/
-    /* O height vai ficar aqui porque a altura que o nav tiver será a mesma do header. A vantagem de deixar aqui é que aqui já tem o display flex.  */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*O pai desse elemento nav que é o header tem width 100% e o filho, nav, por causa do display felx não estava pegando esses 100% (e também talvez porque o pai está com os posicionamentos mexidos e tal, assim aqueles 3 pontinhos (que mais tarde viram o menu estilo hamburguer, ficaram grudados na palavra beautysalon. Para consertar isso tem que add width 100% ao nav também. */
+    /*Esse width 100% e o do #home .text p é para conter a rolagem horizontal. Mesmo assim não estava funcioanndo, então foi retirado o max-width 100% do #home .text p e o 100% do container, aí sim a rolagem horizontal parou*/
     width: 100%;
 }
+
+
+/*Adicionando esse margin ao main e juntamente com o height do nav, os elementos que mudram por causa do position fixed top e left 0 voltam ao normal e o header fica lá fixo.*/
+
+main {
+    margin-top: calc(var(--header-height) + 2rem);
+    /*Há mais espaço do topo(32px). O calc faz uma função (pode ser soma, mult, div, sub), nesse caso ele adiciona esse 2rem (32/16). Agora o topo ali recebe o valor da var header-height + 2rem*/
+}
+
+
+/*LOGO*/
 
 .logo {
     font: 700 1.31rem 'Poppins', sans-serif;
@@ -140,10 +140,17 @@ nav {
 }
 
 
-/*Adicionando esse margin ao main e juntamente com o height do nav, os elementos que mudram por causa do position fixed top e left 0 voltam ao normal e o header fica lá fixo.*/
+/*NAVIGATION*/
 
-main {
-    margin-top: var(--header-height);
+nav {
+    height: var(--header-height);
+    /*72/16 = 4,5*/
+    /* O height vai ficar aqui porque a altura que o nav tiver será a mesma do header. A vantagem de deixar aqui é que aqui já tem o display flex.  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*O pai desse elemento nav que é o header tem width 100% e o filho, nav, por causa do display felx não estava pegando esses 100% (e também talvez porque o pai está com os posicionamentos mexidos e tal, assim aqueles 3 pontinhos (que mais tarde viram o menu estilo hamburguer, ficaram grudados na palavra beautysalon. Para consertar isso tem que add width 100% ao nav também. */
+    width: 100%;
 }
 
 
@@ -163,7 +170,7 @@ main {
 }
 
 
-/* Esse psudo element cria um elemento fantasma antes da class image */
+/* Esse pseudo element cria um elemento fantasma antes da class image */
 
 #home .image::before {
     content: '';
