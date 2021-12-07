@@ -10,6 +10,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+}
+
 
 /*Tira as imgs do tamanho original e as adapta ao 100%*/
 
@@ -157,6 +161,34 @@ nav ul li {
     text-align: center;
 }
 
+nav ul li a {
+    /*Esse transition aqui tem efeito no hover abaixo*/
+    transition: 0.2s;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--base-color);
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--base-color);
+    /*Será absolute ao próximo pai dele que tiver um position relative. No caso ainda não sabia qual seria esse pai então o nav ul li a foi escolhido.*/
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+    transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+    /*Quando ele fizer um hover usa o pseudo element after*/
+    /*Ese width 100% é o que vai fazer o traço crescer no hover*/
+    width: 100%;
+}
+
 nav .menu {
     /*Essa estilização é necessária para o menu que queremos fazer*/
     opacity: 0;
@@ -181,10 +213,14 @@ nav.show .menu {
     /*Aqui diz: na page toda, fica com o top 0 e com o left 0. Daí sim ele cobre a page toda como queremos.*/
 }
 
-
-/*Só vai ser grid quando tiver a class show, porque esse é apenas para o mobile*/
+nav.show .menu {
+    /*Grid aqui para habilitar novas opções e uma delas é o place-content que joga os elementos bem no meio da tela*/
+    display: grid;
+    place-content: center;
+}
 
 nav.show ul.grid {
+    /*Só vai ser grid quando tiver a class show, porque esse é apenas para o mobile*/
     /*Por questão de especificidade é necessário colocar nav ul.grid para ter o efeito desejado com a propriedade*/
     gap: 4rem;
 }
