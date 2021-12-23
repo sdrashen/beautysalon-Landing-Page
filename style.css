@@ -146,6 +146,13 @@ body {
 }
 
 
+/*Quando o header tiver o scroll*/
+
+#header.scroll {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+
 /*Adicionando esse margin ao main e juntamente com o height do nav, os elementos que mudram por causa do position fixed top e left 0 voltam ao normal e o header fica lá fixo.*/
 
 main {

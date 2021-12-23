@@ -23,3 +23,19 @@ for (const link of links) {
         nav.classList.remove('show')
     })
 }
+
+/*Mudar o header da page quando der scrol. Add sombra */
+/*Primeiro precisamos verificar se a altura do header passou do scroll */
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
+
+/*Esse evento de sombra após o scroll acontece na page inteira, então usamos o window*/
+window.addEventListener('scroll', function() {
+    /*Se o scroll no eixo y, o eixo vertical, for mair ou igual a altura do header então pega a lista de classe do header e add a classe scroll*/
+    if (window.scrollY >= navHeight) {
+        header.classList.add('scroll')
+    } else {
+        /*se for menor */
+        header.classList.remove('scroll')
+    }
+})
