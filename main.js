@@ -39,3 +39,18 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scroll')
     }
 })
+
+/*Testimonials carousel slider swiper */
+/*Aqui precisamos usar um container como primeiro argumento e como segundo um objeto */
+const swiper = new Swiper('.swiper-container', {
+    /*Quantos slides verpor passada*/
+    slidesPerView: 1,
+    /*'.swiper-pagination é um nome que pode ser mudado*/
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    /*Pode passar com a rodinha do mouse */
+    mousewheel: true,
+    /*Pode passar com as setinhas fdo teclado */
+    keyboard: true
+})

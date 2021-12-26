@@ -9,7 +9,8 @@
 
     <!--ICONS-->
     <link rel="stylesheet" href="assets/fonts/style.css" />
-
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!--STYLES-->
     <link rel="stylesheet" href="style.css" />
     <!--FONTS-->
@@ -118,59 +119,69 @@
         <div class="divider-1"></div>
         <!--TESTIMONIALS-->
         <section class="section" id="testimonials">
-            <div class="container grid">
+            <!--Removemos a classe grid daqui (<div class="container">) porque ela habilita propriedades que agoras com o swiper não são mais necessárias-->
+            <div class="container">
                 <header>
                     <h2>Depoimentos de quem já passou por aqui</h2>
                 </header>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <blockquote>
-                            <p>
-                                <span>&ldquo;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique tenetur quo porro quidem vitae labore hic nulla modi odio harum in corrupti doloribus
-                            </p>
-                            <cite>
-                  <img
-                    src="assets/photos/wanessa.jpeg"
-                    alt="Foto de Wanessa Souza"
-                  />
-                  Wanessa Souza
-                </cite>
-                        </blockquote>
+                <div class="testimonials swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique tenetur quo porro quidem vitae labore hic nulla modi odio harum in corrupti doloribus
+                                </p>
+                                <cite>
+                    <img
+                      src="assets/photos/wanessa.jpeg"
+                      alt="Foto de Wanessa Souza"
+                    />
+                    Wanessa Souza
+                  </cite>
+                            </blockquote>
+                        </div>
+
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique tenetur quo porro quidem vitae labore hic nulla modi odio harum in corrupti doloribus
+                                </p>
+                                <cite>
+                    <img
+                      src="assets/photos/franciele.jpeg"
+                      alt="Foto de Franciele"
+                    />
+                    Franciele Venega
+                  </cite>
+                            </blockquote>
+                        </div>
+
+                        <div class="testimonial swiper-slide">
+                            <blockquote>
+                                <p>
+                                    <span>&ldquo;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique tenetur quo porro quidem vitae labore hic nulla modi odio harum in corrupti doloribus
+                                </p>
+                                <cite>
+                    <img
+                      src="assets/photos/valeska.jpeg"
+                      alt="Foto de Valeska"
+                    />
+                    Valeska Fabris
+                  </cite>
+                            </blockquote>
+                        </div>
                     </div>
-                </div>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <blockquote>
-                            <p>
-                                <span>&ldquo;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique tenetur quo porro quidem vitae labore hic nulla modi odio harum in corrupti doloribus
-                            </p>
-                            <cite>
-                  <img
-                    src="assets/photos/franciele.jpeg"
-                    alt="Foto de Franciele"
-                  />
-                  Franciele Venega
-                </cite>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <blockquote>
-                            <p>
-                                <span>&ldquo;</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor similique tenetur quo porro quidem vitae labore hic nulla modi odio harum in corrupti doloribus
-                            </p>
-                            <cite>
-                  <img src="assets/photos/valeska.jpeg" alt="Foto de Valeska" />
-                  Valeska Fabris
-                </cite>
-                        </blockquote>
-                    </div>
+                    <!-- If we need pagination -->
+                    <div style="position: relative" class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
         <!--CONTACT-->
     </main>
+    <!--O link do swiper vem primeiro porque o main.js precisa dele para funcionar-->
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--MAIN.JS-->
     <script src="main.js"></script>
 </body>
 
