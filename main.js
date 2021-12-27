@@ -26,19 +26,17 @@ for (const link of links) {
 
 /*Mudar o header da page quando der scrol. Add sombra */
 /*Primeiro precisamos verificar se a altura do header passou do scroll */
-const header = document.querySelector('#header')
-const navHeight = header.offsetHeight
 
-/*Esse evento de sombra após o scroll acontece na page inteira, então usamos o window*/
-window.addEventListener('scroll', function() {
-    /*Se o scroll no eixo y, o eixo vertical, for mair ou igual a altura do header então pega a lista de classe do header e add a classe scroll*/
+function changeHeaderWhenScroll() {
+    const header = document.querySelector('#header')
+    const navHeight = header.offsetHeight
     if (window.scrollY >= navHeight) {
         header.classList.add('scroll')
     } else {
         /*se for menor */
         header.classList.remove('scroll')
-    }
-})
+    } /*Se o scroll no eixo y, o eixo vertical, for mair ou igual a altura do header então pega a lista de classe do header e add a classe scroll*/
+}
 
 /*Testimonials carousel slider swiper */
 /*Aqui precisamos usar um container como primeiro argumento e como segundo um objeto */
@@ -70,7 +68,26 @@ scrollReveal.reveal(
     #about .image, #about .text,
     #services header, #services .card,
     #testimonials header, #testimonials .testimonials,
-    #contact .text, #contact .links
+    #contact .text, #contact .links,
+    footer .brand, footer .social
     
     `, { interval: 100 }
 )
+
+/*Botão voltar para o topo*/
+/**Precisamos pegar da tela o elemento botão para que eu possa aplicar uma classe nele depois que tiver uma rolagem da tela pós um determinado número*/
+function backToTop() {
+    const backToTopButton = document.querySelector('.back-to-top')
+    if (window.scrollY >= 560) {
+        backToTopButton.classList.add('show')
+    } else {
+        backToTopButton.classList.remove('show')
+    }
+}
+/*Algumas mudanças para melhor organização do js */
+/*Esse evento de sombra após o scroll acontece na page inteira, então usamos o window*/
+/*Abaixo está a lógica de quando houver rolagem na página */
+window.addEventListener('scroll', function() {
+    changeHeaderWhenScroll()
+    backToTop()
+})
