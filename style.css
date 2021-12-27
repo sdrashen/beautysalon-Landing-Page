@@ -172,6 +172,10 @@ main {
     color: var(--base-color);
 }
 
+.logo-alt span {
+    color: var(--body-color);
+}
+
 
 /*NAVIGATION*/
 
@@ -530,3 +534,39 @@ nav.show div.icon-close {
 #contact ul li i {
     color: var(--base-color);
 }
+
+
+/*FOOTER*/
+
+footer {
+    background: var(--base-color);
+}
+
+
+/*A class logo abaixo está com um a e by default o display do a é inline e isso não permite colocar margin-bottom. Assim, mudamos o display dele para inline-block*/
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer i {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+footer .social a {
+    margin-right: 2rem;
+}
+
+
+/*Outra opção para alinhar os ícones do footer seria::
+*footer .social {
+*   display: flex;
+*   gap: 2rem;
+*/

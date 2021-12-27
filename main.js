@@ -15,7 +15,7 @@ for (const element of toggle) {
 }
 
 /* Quando clicar em um item do menu, esconder o menu */
-/*"Receber todos os meus links. Em todo o doc pesquisa por todos os seletores que estejam no nav ul li a, quando achá-los atribua-os a consy links" */
+/*"Receber todos os meus links. Em todo o doc pesquisa por todos os seletores que estejam no nav ul li a, quando achá-los atribua-os a const links" */
 const links = document.querySelectorAll('nav ul li a')
     /*"Para cada link dentro da const links add um evento de click que roda uma função para remover a classe show". Isso vai rodar 5x. */
 for (const link of links) {
