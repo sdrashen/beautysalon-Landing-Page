@@ -38,6 +38,9 @@ img {
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
     --body-color: hsl(0 0% 98%);
+    /*FONTS*/
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
 }
 
 
@@ -113,11 +116,15 @@ body {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: calc(5rem + var(--header-height)) 0;
 }
 
 .section .title {
     margin-bottom: 1rem;
+}
+
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
 }
 
 .section header {
@@ -155,10 +162,11 @@ body {
 
 /*Adicionando esse margin ao main e juntamente com o height do nav, os elementos que mudram por causa do position fixed top e left 0 voltam ao normal e o header fica lá fixo.*/
 
-main {
+
+/* main { Esse main foi lá pra o @media min-width: 1200
     margin-top: calc(var(--header-height) + 2rem);
-    /*Há mais espaço do topo(32px). O calc faz uma função (pode ser soma, mult, div, sub), nesse caso ele adiciona esse 2rem (32/16). Agora o topo ali recebe o valor da var header-height + 2rem*/
-}
+    /*Há mais espaço do topo(32px). O calc faz uma função (pode ser soma, mult, div, sub), nesse caso ele adiciona esse 2rem (32/16). Agora o topo ali recebe o valor da var header-height + 2rem
+}*/
 
 
 /*LOGO*/
@@ -542,6 +550,10 @@ footer {
     background: var(--base-color);
 }
 
+footer.section {
+    padding: 4rem 0;
+}
+
 
 /*A class logo abaixo está com um a e by default o display do a é inline e isso não permite colocar margin-bottom. Assim, mudamos o display dele para inline-block*/
 
@@ -559,6 +571,13 @@ footer i {
     font-size: 1.5rem;
     color: var(--text-color-light);
 }
+
+
+/* Se div class="social" tivesse também a classe "gird" nós precisaríamos fazer isso para estilizar os ícones do footer
+footer .social {
+    grid-auto-flow: column;
+    width: fit-content;
+} */
 
 footer .social a {
     margin-right: 2rem;
@@ -608,4 +627,29 @@ footer .social a:hover {
     opacity: 1;
     /*Agora com isso o botão vai aparecer totalmente. 0 é a posição inicial dele*/
     transform: translateY(0);
+}
+
+
+/*RESPONSIVE*/
+
+
+/*=Media queries=*/
+
+
+/*extra large devices: +1200 pra cima*/
+
+@media (min-width: 1200px) {
+    main {
+        margin-top: var(--header-height);
+    }
+}
+
+f
+/*Mínima largura de 992 pra cima*/
+
+@media (min-width: 992px) {
+     :root {
+        --title-font-size: 2.25rem;
+        --subtitle-font-size: 1.125rem;
+    }
 }
