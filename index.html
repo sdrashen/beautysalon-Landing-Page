@@ -122,7 +122,7 @@
             <!--Removemos a classe grid daqui (<div class="container">) porque ela habilita propriedades que agoras com o swiper não são mais necessárias-->
             <div class="container">
                 <header>
-                    <h2>Depoimentos de quem já passou por aqui</h2>
+                    <h2 class="title">Depoimentos de quem já passou por aqui</h2>
                 </header>
                 <div class="testimonials swiper-container">
                     <div class="swiper-wrapper">
@@ -176,11 +176,34 @@
                 </div>
             </div>
         </section>
+        <div class="divider-2"></div>
         <!--CONTACT-->
+        <section class="section" id="contact">
+            <div class="container grid">
+                <div class="text">
+                    <h2 class="title">Entre em contato com a gente!</h2>
+                    <p>
+                        Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.
+                    </p>
+                    <!--O link abaixo ao ser clicado vai redirecionar o user para o whatsapp e vai dar a ele uma mensagem pronta para enviar para o contato que aparece no link.-->
+                    <a href="https://api.whatsapp.com/send?phone=+5511 998456754&text=Oi! Gostaria de agendar um horário." class="button" target="_blank">
+                        <i class="icon-whatsapp"></i>Entrar em contato</a>
+                </div>
+
+                <div class="links">
+                    <ul class="grid">
+                        <li><i class="icon-phone"></i>11 998456754</li>
+                        <li><i class="icon-map-pin"></i>R. Amauri Luz, 850</li>
+                        <li><i class="icon-mail"></i>contato@beautysalon.com</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
     <!--O link do swiper vem primeiro porque o main.js precisa dele para funcionar-->
     <!-- SWIPER -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <!--MAIN.JS-->
     <script src="main.js"></script>
 </body>
