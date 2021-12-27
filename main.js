@@ -51,6 +51,26 @@ const swiper = new Swiper('.swiper-container', {
     },
     /*Pode passar com a rodinha do mouse */
     mousewheel: true,
-    /*Pode passar com as setinhas fdo teclado */
+    /*Pode passar com as setinhas do teclado */
     keyboard: true
 })
+
+/*SCROLLREVEAL: mostra elementos quando der scroll na página */
+const scrollReveal = ScrollReveal({
+        origin: 'top',
+        distance: '30px',
+        duration: 700,
+        reset: true
+            /*Vai vir do topo com uma distância de 30px (é como uma caixa que desce) na velocidade de 700ms. O reset significa que é para sempre fazer isso ao chegar no final da page */
+    })
+    /**As crases como aspas permitem organizar melhor */
+    /**Esse interval é quanto tempo vai levar para cada um ser revelado na tela */
+scrollReveal.reveal(
+    `#home .image, #home .text,
+    #about .image, #about .text,
+    #services header, #services .card,
+    #testimonials header, #testimonials .testimonials,
+    #contact .text, #contact .links
+    
+    `, { interval: 100 }
+)
