@@ -641,9 +641,27 @@ footer .social a:hover {
 /*extra large devices: +1200 pra cima*/
 
 @media (min-width: 1200px) {
+    /*Reusabel classes*/
+    .container {
+        max-width: 1120px;
+        /*As duas propriedades abaixo, junto com as do #home .container faz com que fiquem bem ajustados*/
+        margin-left: auto;
+        margin-right: auto;
+    }
     .section {
         padding: 10rem 0;
     }
+    .section header,
+    #testimonials header {
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .button {
+        height: 3.125rem;
+    }
+    /*Navigation*/
     nav .menu {
         opacity: 1;
         visibility: visible;
@@ -653,9 +671,44 @@ footer .social a:hover {
         display: flex;
         gap: 2rem;
     }
-    nav .menu ul li a.title {}
+    nav .menu ul li a.title {
+        font: 400 1rem var(--body-font);
+    }
+    nav .icon-menu {
+        display: none;
+    }
+    /*Layout*/
     main {
         margin-top: var(--header-height);
+    }
+    /*Home*/
+    #home .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    #home .image {
+        order: 1;
+    }
+    /*Esses orders só são possíveis porque ambos estão em uma caixa com classe grid*/
+    #home .text {
+        order: 0;
+        max-width: 24rem;
+        text-align: left;
+    }
+    /*About*/
+    #about .container {
+        margin: 0 auto;
+        grid-auto-flow: column;
+    }
+    /*Services*/
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    /*testimonials*/
+    #testiomonials .container {
+        margin: 0 auto;
+        grid-auto-flow: column;
     }
 }
 
