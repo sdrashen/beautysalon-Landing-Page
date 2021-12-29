@@ -41,6 +41,8 @@ img {
     /*FONTS*/
     --title-font-size: 1.875rem;
     --subtitle-font-size: 1rem;
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
 }
 
 
@@ -51,7 +53,7 @@ html {
 }
 
 body {
-    font: 400 1rem 'DM Sans', sans-serif;
+    font: 400 1rem var(--body-font);
     color: var(--text-color);
     background: var(--body-color);
     /* webkit é um prefixo (vendor prefixer) que depende do navegador.
@@ -60,7 +62,7 @@ body {
 }
 
 .title {
-    font: 700 1.875rem 'Poppins', sans-serif;
+    font: 700 1.875rem var(--title-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -76,7 +78,7 @@ body {
     align-items: center;
     padding: 0 2rem;
     border-radius: 0.25rem;
-    font: 500 1rem 'DM Sans, sans-serif';
+    font: 500 1rem var(--body-font);
     /*Essa transition é referente ao hover*/
     transition: background 0.3s;
 }
@@ -172,7 +174,7 @@ body {
 /*LOGO*/
 
 .logo {
-    font: 700 1.31rem 'Poppins', sans-serif;
+    font: 700 1.31rem var(--title-font);
     color: var(--title-color);
 }
 
@@ -639,12 +641,25 @@ footer .social a:hover {
 /*extra large devices: +1200 pra cima*/
 
 @media (min-width: 1200px) {
+    .section {
+        padding: 10rem 0;
+    }
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+    nav .menu ul li a.title {}
     main {
         margin-top: var(--header-height);
     }
 }
 
-f
+
 /*Mínima largura de 992 pra cima*/
 
 @media (min-width: 992px) {
