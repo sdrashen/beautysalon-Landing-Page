@@ -50,7 +50,14 @@ const swiper = new Swiper('.swiper-container', {
     /*Pode passar com a rodinha do mouse */
     mousewheel: true,
     /*Pode passar com as setinhas do teclado */
-    keyboard: true
+    keyboard: true,
+    /*Esse breakpoint entrou depois de ter colocado o @media no css */
+    breakpoints: {
+        767: {
+            slidesPerView: 2,
+            setWrapperSize: true
+        }
+    }
 })
 
 /*SCROLLREVEAL: mostra elementos quando der scroll na página */
