@@ -210,9 +210,17 @@ nav ul li a {
     position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: var(--base-color);
 }
+
+
+/**Esse nav ul li a.active vai ficar aí para que o mobile também fique com corziha/
+
+
+
+/*Os seletores nav ul li a.active:hover e nav ul li a.active foram add após o código js para seleçào do itens da nav conforme a section em que o scroll estiver*/
 
 nav ul li a::after {
     content: '';
@@ -226,7 +234,8 @@ nav ul li a::after {
     transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
     /*Quando ele fizer um hover usa o pseudo element after*/
     /*Ese width 100% é o que vai fazer o traço crescer no hover*/
     width: 100%;
@@ -673,6 +682,11 @@ footer .social a:hover {
     }
     nav .menu ul li a.title {
         font: 400 1rem var(--body-font);
+        -webkit-font-smoothing: antialiased;
+    }
+    nav .menu ul li a.title.active {
+        font-weight: bold;
+        -webkit-font-smoothing: auto;
     }
     nav .icon-menu {
         display: none;
